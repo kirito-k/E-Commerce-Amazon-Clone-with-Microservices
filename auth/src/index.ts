@@ -11,5 +11,5 @@ app.get("/api/users", (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Auth is listening on port ${port}`)
+  console.log(`Auth is listening on port ${port}!!`)
 })

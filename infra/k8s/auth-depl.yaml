@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: auth-container
-                  image: kiritok/auth
+                  image: us.gcr.io/ticketing-dev-299022/auth
 ---
 apiVersion: v1
 kind: Service
