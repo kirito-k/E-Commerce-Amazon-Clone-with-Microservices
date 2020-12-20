@@ -23,11 +23,12 @@ ticketing
   `gcloud auth application-default login`
 - While testing your application, if you are not able to access the api endpoint or getting 404 errors, change the protocol from "ticketing.dev/..." to "https://ticketing.dev/...". Excplicitely mention HTTPS.
 
-## Design strucutre
+## Design decisions and strucutre
 
-- Created auth basic server.
-- Build Docker and GKE Kubernetes setup and tested
-- Created Auth errors and middlewares
+- This project follows microservices structure along with individual database per service architecture.
+- Created auth (authentication) basic server using express.
+- Build Docker and GKE Kubernetes setup and unit tested.
+- Created Auth custom errors and middleware in separate folders along with BaseError interface for error response consistency.
 
 ## Technologies:
 
@@ -36,6 +37,7 @@ Server side:
 - TypeScript
 - Express-Router (to organize routes)
 - Express-Validator (to validate and sanitize incoming username, email, password)
+- Express-Async-Errors (to handle async errors)
 
 Cloud and Kubernetes:
 
