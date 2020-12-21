@@ -12,6 +12,8 @@ interface UserModel extends mongoose.Model<UserDoc> {
 }
 
 // Interface that describe properties that our User document has
+// By adding this doc info, we can do "user.email" when we create a
+// new user.
 interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
@@ -27,6 +29,10 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 });
+
+userSchema.statics.build = (attrs: UserAttrs) => {
+  return new User(attrs);
+};
 
 const User = mongoose.model<UserDoc, UserModel>("User", userSchema);
 

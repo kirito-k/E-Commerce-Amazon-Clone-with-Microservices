@@ -19,9 +19,12 @@ ticketing
 
 ## Different types of errors with solutions:
 
+- If hot reload/ live update on skaffold with GKE is not working, go to package.json file and modify start script as follows,
+  `"scripts": { "start": "ts-node-dev --poll src/index.ts" }`
 - If you get error like "default credentials not found" or something with credentials, run following command and login into your project's account
   `gcloud auth application-default login`
 - While testing your application, if you are not able to access the api endpoint or getting 404 errors, change the protocol from "ticketing.dev/..." to "https://ticketing.dev/...". Excplicitely mention HTTPS.
+- EOF exiting with status code 1 or any disconnects while working with GKE. This cause due to VPN. Do not use VPN while working on this.
 
 ## Design decisions and strucutre
 

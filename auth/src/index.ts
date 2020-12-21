@@ -8,7 +8,7 @@ import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { currentUserRouter } from "./routes/current-user";
 import { errorHandling } from "./middlewares/errorHandling";
-import { NotFound } from "./errors/not-found-error";
+import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
 
@@ -21,8 +21,8 @@ app.use(currentUserRouter);
 // This error will invoke when user try to access a path which does not exist here.
 // Order is important. Make sure you invoke this error before your errorHandler middlerware.
 // Even if its declared before erroHanlder, at the end it will pass through that function.
-app.all("*", async () => {
-  throw new NotFound();
+app.all("*", async (req, res) => {
+  throw new NotFoundError();
 });
 
 // Call Custom Error middleware for errors
@@ -40,14 +40,14 @@ const start = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
-    // console.log("Mongodb connected");
+    console.log("Mongodb connected");
   } catch (err) {
     console.error(`Error: ${err}`);
   }
 
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
-    console.log(`Auth is listening on port ${port}`);
+    console.log(`Auth is listening on port ${port}!`);
   });
 };
 start();
