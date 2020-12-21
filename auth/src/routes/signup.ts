@@ -26,23 +26,13 @@ router.post(
 
     // Check if the email already in use
     const existingUser = await User.findOne({ email });
-    console.log(existingUser);
-
-    console.log("Here1");
-
     if (existingUser) {
-      console.log("Email already in use");
-      // throw new BadRequestError("Email already in use");
-      return res.send({});
+      throw new BadRequestError("Email already in use");
     }
-    console.log("Here2");
 
     // Create user and save
     const user = User.build({ email, password });
-    console.log("Here3");
-
     await user.save();
-    console.log("Here4");
 
     res.status(201).send(user);
   }

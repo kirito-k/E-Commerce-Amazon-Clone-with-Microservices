@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Password } from "../services/password";
 
 // Interface describing what attributes we need to create a new User.
 interface UserAttrs {
@@ -28,6 +29,19 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+});
+
+// We want to hash our password before storing it into DB
+// Do not use "() =>". Following strucutre allows us to access instance's "this"
+// Using "this" in "() =>" will override instance "this" with current docuement
+// Modified returns true even when we just crated the entry.
+userSchema.pre("save", async function (done) {
+  if (this.isModified("password")) {
+    const hashed = await Password.toHash(this.get("password"));
+    this.set("password", hashed);
+  }
+
+  done();
 });
 
 userSchema.statics.build = (attrs: UserAttrs) => {
