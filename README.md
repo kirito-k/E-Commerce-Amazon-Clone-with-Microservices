@@ -1,5 +1,7 @@
 ticketing
 
+A megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine.
+
 ## Implementation instruction
 
 - Created a free google cloud account and a new project named "ticketing.dev".
@@ -16,6 +18,8 @@ ticketing
 - To create a direct URL link from our browser to our Google Cloud's application, click on the top leftside options slider and click on "Load balancer" from "Networkin services" option. You will see our load balancer listed. Open it and copy the IP shown on the page (ignore port).
 - Change the "/c/Windows/System32/drivers/etc/hosts" file on Windows or "/etc/hosts" if on Linux/Mac and put the following line in it.
   `copied_ip ticketing.dev`
+
+- Used both JWT and cookies to authorize users for different requests.
 
 ## Different types of errors with solutions:
 

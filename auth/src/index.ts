@@ -1,7 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
-import "express-async-errors";
 import mongoose from "mongoose";
+import cookieSession from "cookie-session";
+import "express-async-errors";
 
 import { signupRouter } from "./routes/signup";
 import { signinRouter } from "./routes/signin";
@@ -12,6 +13,16 @@ import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
 
+// Explicitely telling express to trust the traffic coming from proxy (ingress-nginx)
+// Traffic is coming from HTTPS
+app.set("trust proxy", true);
+
+app.use(
+  cookieSession({
+    signed: false,
+    secure: true,
+  })
+);
 app.use(bodyParser.json());
 app.use(signupRouter);
 app.use(signinRouter);
