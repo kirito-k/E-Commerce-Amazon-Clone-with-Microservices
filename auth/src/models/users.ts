@@ -32,8 +32,10 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    // This is the return type object we want ones data is stored in mongo in above structure.
-    // By default, mongo returns everything we inserted along with __v (version number) and _id (identified for documents). For this applications, we modify the return JSON as follows.
+    // When mongo object is sent in response from server, it calls "toJSON" method of mongo.
+    // By default it returns everything we inserted along with __v (version number) and _id (identified for documents).
+    // The following will override that function.
+    // NOTE: This only applies when response is sent from server. When server is using this object, it will still have _id, __v, etc in it.
     toJSON: {
       transform(doc, ret) {
         ret.id = ret._id;
