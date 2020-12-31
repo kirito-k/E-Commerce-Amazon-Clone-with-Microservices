@@ -8,7 +8,7 @@ import { signupRouter } from "./routes/signup";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { currentUserRouter } from "./routes/current-user";
-import { errorHandling } from "./middlewares/errorHandling";
+import { errorHandling } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
@@ -46,6 +46,10 @@ app.get("/api/users/signup", (req, res) => {
 // We create this function to use async await for mongodb connection
 const start = async () => {
   try {
+    if (!process.env.JWT_KEY) {
+      throw new Error("JWT_KEY must be defined");
+    }
+
     await mongoose.connect("mongodb://auth-mongo-cip-srv:27017/auth", {
       useNewUrlParser: true,
       useUnifiedTopology: true,

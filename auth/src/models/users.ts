@@ -7,11 +7,6 @@ interface UserAttrs {
   password: string;
 }
 
-// Interface that describe what extra methods will be in Mongoose Model
-interface UserModel extends mongoose.Model<UserDoc> {
-  build(attrs: UserAttrs): UserDoc;
-}
-
 // Interface that describe properties that our User document has
 // By adding this doc info, we can do "user.email" when we create a
 // new user.
@@ -20,16 +15,35 @@ interface UserDoc extends mongoose.Document {
   password: string;
 }
 
-const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
+// Interface that describe what extra methods will be in Mongoose Model
+interface UserModel extends mongoose.Model<UserDoc> {
+  build(attrs: UserAttrs): UserDoc;
+}
+
+const userSchema = new mongoose.Schema(
+  {
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
-  password: {
-    type: String,
-    required: true,
-  },
-});
+  {
+    // This is the return type object we want ones data is stored in mongo in above structure.
+    // By default, mongo returns everything we inserted along with __v (version number) and _id (identified for documents). For this applications, we modify the return JSON as follows.
+    toJSON: {
+      transform(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.password;
+        delete ret.__v;
+      },
+    },
+  }
+);
 
 // We want to hash our password before storing it into DB
 // Do not use "() =>". Following strucutre allows us to access instance's "this"

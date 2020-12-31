@@ -8,7 +8,6 @@ export class Password {
     const salt = randomBytes(8).toString("hex");
     const buf = (await scryptAsync(password, salt, 64)) as Buffer;
 
-    console.log(buf.toString("hex"));
     return `${buf.toString("hex")}.${salt}`;
   }
 

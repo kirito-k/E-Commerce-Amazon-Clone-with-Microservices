@@ -18,8 +18,8 @@ A megaproject of building a production grade and scalable Amazon like E-commerce
 - To create a direct URL link from our browser to our Google Cloud's application, click on the top leftside options slider and click on "Load balancer" from "Networkin services" option. You will see our load balancer listed. Open it and copy the IP shown on the page (ignore port).
 - Change the "/c/Windows/System32/drivers/etc/hosts" file on Windows or "/etc/hosts" if on Linux/Mac and put the following line in it.
   `copied_ip ticketing.dev`
-
-- Used both JWT and cookies to authorize users for different requests.
+- We have to create a K8s Secret object that will hold our JWT secret. This service will be used by other pods to decode user's JWT tokens.
+  `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=helloworld`
 
 ## Different types of errors with solutions:
 
