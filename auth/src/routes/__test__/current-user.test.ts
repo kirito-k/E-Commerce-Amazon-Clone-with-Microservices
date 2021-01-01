@@ -18,6 +18,5 @@ it("get current user details from jwt token", async () => {
     .send()
     .expect(200);
 
-  console.log(response);
-  console.log(response.body);
+  expect(response.body.currentUser.email).toEqual("test@test.com");
 });
