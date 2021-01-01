@@ -46,7 +46,7 @@ Server side:
 - Express-Router (to organize routes)
 - Express-Validator (to validate and sanitize incoming username, email, password)
 - Express-Async-Errors (to handle async errors)
-- Jest library for Testing
+- Jest library for Integral Testing. Supertest for testing requests
 
 Cloud and Kubernetes:
 
