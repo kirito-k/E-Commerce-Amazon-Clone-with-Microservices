@@ -19,7 +19,7 @@ A megaproject of building a production grade and scalable Amazon like E-commerce
 - Change the "/c/Windows/System32/drivers/etc/hosts" file on Windows or "/etc/hosts" if on Linux/Mac and put the following line in it.
   `copied_ip ticketing.dev`
 - We have to create a K8s Secret object that will hold our JWT secret. This service will be used by other pods to decode user's JWT tokens.
-  `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=helloworld`
+  `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=your_key`
 
 ## Different types of errors with solutions:
 
@@ -29,6 +29,7 @@ A megaproject of building a production grade and scalable Amazon like E-commerce
   `gcloud auth application-default login`
 - While testing your application, if you are not able to access the api endpoint or getting 404 errors, change the protocol from "ticketing.dev/..." to "https://ticketing.dev/...". Excplicitely mention HTTPS.
 - EOF exiting with status code 1 or any disconnects while working with GKE. This cause due to VPN. Do not use VPN while working on this.
+- If testing environment shows some tests failing even after you resolved them, stop and restart that test by "Ctrl + C" and "npm test".
 
 ## Design decisions and strucutre
 
@@ -45,6 +46,7 @@ Server side:
 - Express-Router (to organize routes)
 - Express-Validator (to validate and sanitize incoming username, email, password)
 - Express-Async-Errors (to handle async errors)
+- Jest library for Testing
 
 Cloud and Kubernetes:
 
