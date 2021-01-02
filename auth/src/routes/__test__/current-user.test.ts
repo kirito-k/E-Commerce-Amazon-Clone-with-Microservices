@@ -20,3 +20,12 @@ it("get current user details from jwt token", async () => {
 
   expect(response.body.currentUser.email).toEqual("test@test.com");
 });
+
+it("send null if user not signed in", async () => {
+  const response = await request(app)
+    .get("/api/users/currentuser")
+    .send()
+    .expect(200);
+
+  expect(response.body.currentUser).toEqual(null);
+});
