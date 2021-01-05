@@ -21,7 +21,7 @@ A megaproject of building a production grade and scalable Amazon like E-commerce
 - We have to create a K8s Secret object that will hold our JWT secret. This service will be used by other pods to decode user's JWT tokens.
   `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=your_key`
 
-## Different types of errors with solutions:
+## Different types of errors with solutions
 
 - If hot reload/ live update on skaffold with GKE is not working, go to package.json file and modify start script as follows,
   `"scripts": { "start": "ts-node-dev --poll src/index.ts" }`
