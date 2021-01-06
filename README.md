@@ -1,6 +1,6 @@
 ticketing
 
-A megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine.
+A megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine
 
 ## Implementation instruction
 
