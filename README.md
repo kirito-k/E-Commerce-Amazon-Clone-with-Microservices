@@ -18,11 +18,11 @@
 1. [Known Implementation Issues and Solutions](#known-implementation-issues-and-solutions)
 1. [Technologies Used](#technologies-used)
 
-NOTE: New content below will be added below as the project progresses
+NOTE: New instructions will be added below as the project progresses
 
 ## Introduction
 
-Creating an Amazon like E-commerce online store where buyers and sellers can register and start goods.
+Creating an easy to use E-commerce online store where users can buy and sell the goods. The application is build using MERN stack, scaled using Kubernetes and deployed using Google Cloud.
 
 Some of the highlighted technologies in this project includes,
 
