@@ -1,4 +1,10 @@
-ticketing
+# HELLO DEAR VISITOR!
+
+![](./images/Under-Construction-Anime.jpg)
+
+## This project is activiely being build and will soon be deployed for users to enjoy and shop. You can still view the project files and implementation details down below.
+
+## Appoligies for the inconvinience and Thank You for Visiting
 
 A megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine
 
