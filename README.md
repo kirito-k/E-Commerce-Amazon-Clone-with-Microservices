@@ -4,9 +4,28 @@
 
 ## This project is activiely being build and will soon be deployed for users to enjoy and shop. You can still view the project files and implementation details down below.
 
-## Appoligies for the inconvinience and Thank You for Visiting
+## Sincere apologies for the inconvenience and Thank You for Visiting
 
-A megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine
+# E-Commerce Amazon Clone with Microservices
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+1. [Motivation](#motivation)
+1. [Pre-requisite Tools](#pre-requisite-tools)
+1. [Implementation](#implementation)
+1. [Screenshots](#screenshots)
+1. [Technologies Used](#technologies-used)
+
+## Introduction
+
+Creating an Amazon like E-commerce online store where buyers and sellers can register and start sell/buy goods.
+
+## Motivation
+
+I always wanted to know how these giant online websites that sell goods were created. Handling transactions and people's trust is really huge task.
+
+This is a megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine
 
 ## Implementation instruction
 
