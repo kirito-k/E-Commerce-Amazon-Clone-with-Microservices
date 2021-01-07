@@ -32,7 +32,7 @@ Some of the highlighted technologies in this project include,
 - Multi-pod Kubernetes setup in Google Kubernetes Engine(GKE)
 - NextJS for Server-Side Rendering(SSR) application
 - NATS Event Bus for service isolation
-- Stripe Payment System and Automated Tests
+- Secure Payment service with Stripe API
 
 ## Motivation
 
