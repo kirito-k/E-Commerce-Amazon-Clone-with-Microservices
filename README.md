@@ -40,7 +40,7 @@ I always wanted to know how these giant online websites like Amazon that sell go
 
 Thus, to learn the REAL tech and prove others wrong, I was motivated enough to create something that included everything.
 
-This is a MEGAPROJECT of building a scalable, production-grade Amazon-like E-commerce website using pure Microservices architecture with Google Kubernetes Engine.
+This is a MEGAPROJECT of building a scalable, production-grade Amazon-like E-commerce website using pure Microservices architecture and Google Kubernetes Engine.
 
 ## Pre-requisites
 
