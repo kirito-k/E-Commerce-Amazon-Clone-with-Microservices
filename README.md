@@ -21,11 +21,15 @@
 
 Creating an Amazon like E-commerce online store where buyers and sellers can register and start sell/buy goods.
 
+This project
+
 ## Motivation
 
-I always wanted to know how these giant online websites that sell goods were created. Handling transactions and people's trust is really huge task.
+I always wanted to know how these giant online websites that sell goods were created. Handling real goods and money is real feat. On the other hand, it always bothered me to hear "scalable", "serverless", "cloud", "production-ready", etc. words and how they are NOT something a single unemployeed person can create.
 
-This is a megaproject of building a production grade and scalable Amazon like E-commerce website using Microservices architecture and Google Kubernetes Engine
+Thus, to learn the REAL tech and prove others wrong, it was motivation enough for me to create something that included every single thing.
+
+This is a MEGAPROJECT of building a scalable, production grade Amazon like E-commerce website using pure Microservices architecture with Google Kubernetes Engine.
 
 ## Implementation instruction
 
