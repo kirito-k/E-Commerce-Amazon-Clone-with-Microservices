@@ -24,7 +24,7 @@ NOTE: New instructions will be added below as the project progresses
 
 Creating an easy to use E-commerce online store where users can buy and sell the goods. The application is based on microservices architecture build using MERN stack, scaled using Kubernetes, and deployed using Google Cloud.
 
-Some of the highlighted technologies in this project include,
+Some of the highlighted technologies in this project include
 
 - Authentication/Authorization(JWT with Cookies)
 - Error Handling for services and middlewares with TypeScript
